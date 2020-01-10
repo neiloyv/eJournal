@@ -11,129 +11,129 @@ public class Client {
     @Id
     @Column(name = "CLIENT_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int clientId;
+    private int id;
 
     @Column(name = "CLIENT_SURNAME")
-    private String clientSurname;
+    private String surname;
 
 
     @Column(name = "CLIENT_NAME")
-    private String clientName;
+    private String name;
 
     @Column(name = "CLIENT_BIRTHDAY", nullable = false)
-    private Date clientBirthday;
+    private Date birthday;
 
     @Column(name = "CLIENT_PARENT1")
-    private String clientParent1;
+    private String parent1;
 
     @Column(name = "CLIENT_PHONE1")
-    private String clientParentPhone1;
+    private String phone1;
 
     @Column(name = "CLIENT_PARENT2")
-    private String clientParent2;
+    private String parent2;
 
     @Column(name = "CLIENT_PHONE2")
-    private String clientParentPhone2;
+    private String phone2;
 
     @Column(name = "CLIENT_CLASS")
-    private String clientClass;
+    private String group;
 
     @Column(name = "CLIENT_STATUS")
-    private String clientStatus;
+    private String status;
 
-    public int getClientId() {
-        return clientId;
+    public int getId() {
+        return id;
     }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getClientSurname() {
-        return clientSurname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setClientSurname(String clientSurname) {
-        this.clientSurname = clientSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getName() {
+        return name;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getClientBirthday() {
-        return clientBirthday;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setClientBirthday(Date clientBirthday) {
-        this.clientBirthday = clientBirthday;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public String getClientParent1() {
-        return clientParent1;
+    public String getParent1() {
+        return parent1;
     }
 
-    public void setClientParent1(String clientParent1) {
-        this.clientParent1 = clientParent1;
+    public void setParent1(String parent1) {
+        this.parent1 = parent1;
     }
 
-    public String getClientParentPhone1() {
-        return clientParentPhone1;
+    public String getPhone1() {
+        return phone1;
     }
 
-    public void setClientParentPhone1(String clientParentPhone1) {
-        this.clientParentPhone1 = clientParentPhone1;
+    public void setPhone1(String phone1) {
+        this.phone1 = phone1;
     }
 
-    public String getClientParent2() {
-        return clientParent2;
+    public String getParent2() {
+        return parent2;
     }
 
-    public void setClientParent2(String clientParent2) {
-        this.clientParent2 = clientParent2;
+    public void setParent2(String parent2) {
+        this.parent2 = parent2;
     }
 
-    public String getClientParentPhone2() {
-        return clientParentPhone2;
+    public String getPhone2() {
+        return phone2;
     }
 
-    public void setClientParentPhone2(String clientParentPhone2) {
-        this.clientParentPhone2 = clientParentPhone2;
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
     }
 
-    public String getClientClass() {
-        return clientClass;
+    public String getGroup() {
+        return group;
     }
 
-    public void setClientClass(String clientClass) {
-        this.clientClass = clientClass;
+    public void setGroup(String group) {
+        this.group = group;
     }
 
-    public String getClientStatus() {
-        return clientStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setClientStatus(String clientStatus) {
-        this.clientStatus = clientStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Client{" +
-                "Id=" + clientId +
-                ", Surname='" + clientSurname + '\'' +
-                ", Name='" + clientName + '\'' +
-                ", Birthday=" + clientBirthday +
-                ", Parent1='" + clientParent1 + '\'' +
-                ", ParentPhone1='" + clientParentPhone1 + '\'' +
-                ", Parent2='" + clientParent2 + '\'' +
-                ", ParentPhone2='" + clientParentPhone2 + '\'' +
-                ", Class='" + clientClass + '\'' +
-                ", Status='" + clientStatus + '\'' +
+                "Id=" + id +
+                ", Surname='" + surname + '\'' +
+                ", Name='" + name + '\'' +
+                ", Birthday=" + birthday +
+                ", Parent1='" + parent1 + '\'' +
+                ", ParentPhone1='" + phone1 + '\'' +
+                ", Parent2='" + parent2 + '\'' +
+                ", ParentPhone2='" + phone2 + '\'' +
+                ", Class='" + group + '\'' +
+                ", Status='" + status + '\'' +
                 '}';
     }
 }

@@ -32,7 +32,7 @@ public class ClientController {
 
     @RequestMapping(value = "/clients/add", method = RequestMethod.POST)
     public String addClient(@ModelAttribute("client") Client client) {
-        if(client.getClientId() == 0){
+        if(client.getId() == 0){
             this.clientService.addClient(client);
         } else {
             this.clientService.updateClient(client);
