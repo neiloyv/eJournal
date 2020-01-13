@@ -5,6 +5,7 @@
   Time: 16:32
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
@@ -56,20 +57,32 @@
 
 </head>
 <body>
-<h1>Book Details</h1>
+<h1>Детальная информация о клиенте</h1>
 
 <table class="tg">
     <tr>
-        <th width="80">ID</th>
-        <th width="120">Title</th>
-        <th width="120">Author</th>
-        <th width="120">Price</th>
+        <th width="40">Номер</th>
+        <th width="100">Фамилия</th>
+        <th width="100">Имя</th>
+        <th width="100">День рождения</th>
+        <th width="100">Родитель</th>
+        <th width="100">Телефон</th>
+        <th width="100">Родитель</th>
+        <th width="100">Телефон</th>
+        <th width="100">Группа</th>
+        <th width="100">Статус</th>
     </tr>
     <tr>
-        <td>${book.id}</td>
-        <td>${book.bookTitle}</td>
-        <td>${book.bookAuthor}</td>
-        <td>${book.price/100}${book.price%100}</td>
+        <td>${client.id}</td>
+        <td>${client.surname}</td>
+        <td>${client.name}</td>
+        <td>${client.birthday}</td>
+        <td>${client.parent1}</td>
+        <td>${client.phone1}</td>
+        <td>${client.parent2}</td>
+        <td>${client.phone2}</td>
+        <td>${client.group}</td>
+        <td>${client.status}</td>
     </tr>
 </table>
 </body>

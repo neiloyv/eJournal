@@ -1,6 +1,5 @@
 package com.neiloyv.model;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -9,36 +8,36 @@ public class Client {
 
 
     @Id
-    @Column(name = "CLIENT_ID")
+    @Column(name = "CLIENTS_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "CLIENT_SURNAME")
+    @Column(name = "CLIENTS_SURNAME")
     private String surname;
 
 
-    @Column(name = "CLIENT_NAME")
+    @Column(name = "CLIENTS_NAME")
     private String name;
 
-    @Column(name = "CLIENT_BIRTHDAY", nullable = false)
-    private Date birthday;
+    @Column(name = "CLIENTS_BIRTHDAY")
+    private String birthday;
 
-    @Column(name = "CLIENT_PARENT1")
+    @Column(name = "CLIENTS_PARENT1")
     private String parent1;
 
-    @Column(name = "CLIENT_PHONE1")
+    @Column(name = "CLIENTS_PHONE1")
     private String phone1;
 
-    @Column(name = "CLIENT_PARENT2")
+    @Column(name = "CLIENTS_PARENT2")
     private String parent2;
 
-    @Column(name = "CLIENT_PHONE2")
+    @Column(name = "CLIENTS_PHONE2")
     private String phone2;
 
-    @Column(name = "CLIENT_CLASS")
+    @Column(name = "CLIENTS_CLASS")
     private String group;
 
-    @Column(name = "CLIENT_STATUS")
+    @Column(name = "CLIENTS_STATUS")
     private String status;
 
     public int getId() {
@@ -65,11 +64,11 @@ public class Client {
         this.name = name;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

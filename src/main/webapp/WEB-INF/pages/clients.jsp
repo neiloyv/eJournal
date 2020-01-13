@@ -5,6 +5,7 @@
   Time: 16:32
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -54,7 +55,7 @@
     </style>
 </head>
 <body>
-    <a href="../../index.jsp">Назад в главное меню</a>
+    <a href="<c:url value="/index.jsp"/>">Назад в главное меню</a>
 
     <br/>
     <br/>
@@ -118,43 +119,107 @@
             </c:if>
             <tr>
                 <td>
-                    <form:label path="clientTitle">
-                        <spring:message text="Title"/>
+                    <form:label path="surname">
+                        <spring:message text="Фамилия"/>
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="clientTitle"/>
+                    <form:input path="surname"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <form:label path="bookAuthor">
-                        <spring:message text="Author"/>
+                    <form:label path="name">
+                        <spring:message text="Имя"/>
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="clientAuthor"/>
+                    <form:input path="name"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <form:label path="price">
-                        <spring:message text="Price"/>
+                    <form:label path="birthday">
+                        <spring:message text="День рождения"/>
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="price"/>
+                    <form:input path="birthday"/>
                 </td>
             </tr>
+
+            <tr>
+                <td>
+                    <form:label path="parent1">
+                        <spring:message text="Мама"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="parent1"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="phone1">
+                        <spring:message text="Телефон"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="phone1"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="parent2">
+                        <spring:message text="Папа"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="parent2"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="phone2">
+                        <spring:message text="Телефон"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="phone2"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="group">
+                        <spring:message text="Группа"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="group"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="status">
+                        <spring:message text="Статус"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="status"/>
+                </td>
+            </tr>
+
+
+
             <tr>
                 <td colspan="2">
-                    <c:if test="${!empty client.bookTitle}">
+                    <c:if test="${!empty client.surname}">
                         <input type="submit"
-                               value="<spring:message text="Edit client"/>"/>
+                               value="<spring:message text="Редактировать"/>"/>
                     </c:if>
-                    <c:if test="${empty client.bookTitle}">
+                    <c:if test="${empty client.surname}">
                         <input type="submit"
-                               value="<spring:message text="Add client"/>"/>
+                               value="<spring:message text="Добавить клиента"/>"/>
                     </c:if>
                 </td>
             </tr>

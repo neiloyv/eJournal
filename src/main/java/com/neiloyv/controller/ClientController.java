@@ -22,7 +22,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @RequestMapping(value = "clients", method = RequestMethod.GET)
+    @RequestMapping(value = "/clients", method = RequestMethod.GET)
     public String listClients(Model model){
         model.addAttribute("client", new Client());
         model.addAttribute("listClients", this.clientService.listClients());
@@ -54,7 +54,7 @@ public class ClientController {
         return "clients";
     }
 
-    @RequestMapping("clietndata/{id}")
+    @RequestMapping("/clietndata/{id}")
     public String clietnData(@PathVariable("id") int id, Model model) {
         model.addAttribute("client", this.clientService.getClientId(id));
         return "clietndata";

@@ -14,18 +14,18 @@
     </bean>
 
     <!-- Database Information -->
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:8080/EJOURNAL"/>
+                  value="jdbc:mysql://localhost:3306/EJOURNAL"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
 
     <!-- Hibernate 5 SessionFactory Bean definition -->
-    <bean id="hibernate5AnnotatedSessionFactory"
-          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <bean id="hibernate4AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
@@ -43,7 +43,7 @@
 
     <!--BookDao and BookService beans-->
     <bean id="clientDao" class="com.neiloyv.dao.ClientDaoImpl">
-        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <bean id="clientService" class="com.neiloyv.service.ClientServiceImpl">
@@ -54,8 +54,8 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <mvc:default-servlet-handler/>

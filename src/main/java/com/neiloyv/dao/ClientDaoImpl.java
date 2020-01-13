@@ -68,6 +68,6 @@ public class ClientDaoImpl implements ClientDao {
         for (Client client : listClients) {
             logger.info("Client list: " + client);
         }
-        return null;
+        return listClients;
     }
 }
