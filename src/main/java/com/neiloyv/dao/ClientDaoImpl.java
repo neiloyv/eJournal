@@ -36,7 +36,6 @@ public class ClientDaoImpl implements ClientDao {
         Session session = sessionFactory.getCurrentSession();
         session.update(client);
         logger.info("Client successfully update in DB. Client detalis: " + client);
-
     }
 
     @Override
@@ -48,7 +47,6 @@ public class ClientDaoImpl implements ClientDao {
             session.delete(client);
         }
         logger.info("Client successfully delete from DB. Client detalis: " + client);
-
     }
 
     @Override
@@ -70,5 +68,4 @@ public class ClientDaoImpl implements ClientDao {
         }
         return listClients;
     }
-
 }

@@ -22,23 +22,25 @@ public class Client {
     @Column(name = "CLIENTS_BIRTHDAY")
     private String birthday;
 
-    @Column(name = "CLIENTS_PARENT1")
-    private String parent1;
+    @Column(name = "CLIENTS_PARENT")
+    private String parent;
 
-    @Column(name = "CLIENTS_PHONE1")
-    private String phone1;
-
-    @Column(name = "CLIENTS_PARENT2")
-    private String parent2;
-
-    @Column(name = "CLIENTS_PHONE2")
-    private String phone2;
+    @Column(name = "CLIENTS_PHONE")
+    private String phone;
 
     @Column(name = "CLIENTS_CLASS")
     private String group;
 
-    @Column(name = "CLIENTS_STATUS")
-    private String status;
+    @Transient
+    private int pp;
+
+    public int getPp() {
+        return pp;
+    }
+
+    public void setPp(int pp) {
+        this.pp = pp;
+    }
 
     public int getId() {
         return id;
@@ -72,36 +74,20 @@ public class Client {
         this.birthday = birthday;
     }
 
-    public String getParent1() {
-        return parent1;
+    public String getParent() {
+        return parent;
     }
 
-    public void setParent1(String parent1) {
-        this.parent1 = parent1;
+    public void setParent(String parent) {
+        this.parent = parent;
     }
 
-    public String getPhone1() {
-        return phone1;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhone1(String phone1) {
-        this.phone1 = phone1;
-    }
-
-    public String getParent2() {
-        return parent2;
-    }
-
-    public void setParent2(String parent2) {
-        this.parent2 = parent2;
-    }
-
-    public String getPhone2() {
-        return phone2;
-    }
-
-    public void setPhone2(String phone2) {
-        this.phone2 = phone2;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getGroup() {
@@ -112,14 +98,6 @@ public class Client {
         this.group = group;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "Client{" +
@@ -127,12 +105,9 @@ public class Client {
                 ", Surname='" + surname + '\'' +
                 ", Name='" + name + '\'' +
                 ", Birthday=" + birthday +
-                ", Parent1='" + parent1 + '\'' +
-                ", ParentPhone1='" + phone1 + '\'' +
-                ", Parent2='" + parent2 + '\'' +
-                ", ParentPhone2='" + phone2 + '\'' +
+                ", Parent1='" + parent + '\'' +
+                ", ParentPhone1='" + phone + '\'' +
                 ", Class='" + group + '\'' +
-                ", Status='" + status + '\'' +
                 '}';
     }
 }

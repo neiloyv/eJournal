@@ -42,22 +42,23 @@ public class ClientController {
     }
 
     @RequestMapping("/remove/{id}")
-    public String removeClent(@PathVariable("id") int id) {
+    public String removeClient(@PathVariable("id") int id) {
         this.clientService.remoteClient(id);
         return "redirect:/clients";
     }
 
     @RequestMapping("/edit/{id}")
-    public String editClent(@PathVariable("id") int id, Model model) {
+    public String editClient(@PathVariable("id") int id, Model model) {
         model.addAttribute("client", this.clientService.getClientId(id));
         model.addAttribute("listClients", this.clientService.listClients());
         return "clients";
     }
 
-    @RequestMapping("/clietndata/{id}")
-    public String clietnData(@PathVariable("id") int id, Model model) {
+    @RequestMapping("/clientdata/{id}")
+    public String clientData(@PathVariable("id") int id, Model model) {
+        System.out.println("client data method: ");
         model.addAttribute("client", this.clientService.getClientId(id));
-        return "clietndata";
+        return "clientdata";
     }
 
 

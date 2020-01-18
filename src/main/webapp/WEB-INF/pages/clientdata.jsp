@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
@@ -59,30 +58,62 @@
 <body>
 <h1>Детальная информация о клиенте</h1>
 
+<c:if test="${!empty listClients}">
+    <table class="tg">
+        <tr>
+            <th width="40">п/п</th>
+            <th width="100">Фамилия</th>
+            <th width="100">Имя</th>
+            <th width="100">День рождения</th>
+            <th width="100">Родитель</th>
+            <th width="100">Телефон</th>
+            <th width="100">Группа</th>
+            <th width="100">Ред.</th>
+            <th width="100">Удалить</th>
+            <th width="100">Архив</th>
+        </tr>
+        <c:forEach items="${listClients}" var="client">
+            <tr>
+                <td>${client.pp}</td>
+                <td>${client.surname}</td>
+                <td>${client.name}</td>
+                <td>${client.birthday}</td>
+                <td>${client.parent}</td>
+                <td>${client.phone}</td>
+                <td>${client.group}</td>
+                <td><a href="<c:url value='/edit/${client.id}'/>">Ред.</a></td>
+                <td><a href="<c:url value='/remove/${client.id}'/>">Удалить</a></td>
+                <td><a href="<c:url value='/archive/${client.id}'/>">Архив</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
+
+
+
+
+
+
+
+
 <table class="tg">
     <tr>
-        <th width="40">Номер</th>
+        <th width="40">п/п</th>
         <th width="100">Фамилия</th>
         <th width="100">Имя</th>
         <th width="100">День рождения</th>
         <th width="100">Родитель</th>
         <th width="100">Телефон</th>
-        <th width="100">Родитель</th>
-        <th width="100">Телефон</th>
         <th width="100">Группа</th>
-        <th width="100">Статус</th>
     </tr>
     <tr>
-        <td>${client.id}</td>
+        <td>${client.pp}</td>
         <td>${client.surname}</td>
         <td>${client.name}</td>
         <td>${client.birthday}</td>
-        <td>${client.parent1}</td>
-        <td>${client.phone1}</td>
-        <td>${client.parent2}</td>
-        <td>${client.phone2}</td>
+        <td>${client.parent}</td>
+        <td>${client.phone}</td>
         <td>${client.group}</td>
-        <td>${client.status}</td>
     </tr>
 </table>
 </body>

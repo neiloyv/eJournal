@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -43,6 +44,14 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public List<Client> listClients() {
-        return this.clientDao.listClients();
+//        return this.clientDao.listClients();
+        List<Client> clients = this.clientDao.listClients();
+        int currentPp = 1;
+
+        for (Client client : clients) {
+            client.setPp(currentPp++);
+        }
+
+        return clients;
     }
 }
