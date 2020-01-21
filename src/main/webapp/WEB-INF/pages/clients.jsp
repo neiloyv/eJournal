@@ -127,7 +127,7 @@
                 <tr>
                     <td>
                         <form:label path="parent">
-                            <spring:message text="Мама"/>
+                            <spring:message text="Родитель"/>
                         </form:label>
                     </td>
                     <td>

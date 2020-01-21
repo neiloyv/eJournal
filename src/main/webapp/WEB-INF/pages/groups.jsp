@@ -82,11 +82,6 @@
             <table>
                 <c:if test="${!empty group.title}">
                     <tr>
-                            <%--<td>--%>
-                            <%--<form:label path="id">--%>
-                            <%--<spring:message text="Номер"/>--%>
-                            <%--</form:label>--%>
-                            <%--</td>--%>
                         <td>
                                 <%--<form:input path="id" readonly="true" size="8" disabled="true"/>--%>
                             <form:hidden path="id"/>
