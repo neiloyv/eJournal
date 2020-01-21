@@ -30,7 +30,7 @@ public class ClientController {
         return "clients";
     }
 
-    @RequestMapping(value = "/clients/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/clients/addClient", method = RequestMethod.POST)
     public String addClient(@ModelAttribute("client") Client client) {
         if(client.getId() == 0){
             this.clientService.addClient(client);
@@ -41,24 +41,24 @@ public class ClientController {
         return "redirect:/clients";
     }
 
-    @RequestMapping("/remove/{id}")
+    @RequestMapping("/removeClient/{id}")
     public String removeClient(@PathVariable("id") int id) {
         this.clientService.remoteClient(id);
         return "redirect:/clients";
     }
 
-    @RequestMapping("/edit/{id}")
+    @RequestMapping("/editClient/{id}")
     public String editClient(@PathVariable("id") int id, Model model) {
         model.addAttribute("client", this.clientService.getClientId(id));
         model.addAttribute("listClients", this.clientService.listClients());
         return "clients";
     }
 
-    @RequestMapping("/clientdata/{id}")
+    @RequestMapping("/dataClient/{id}")
     public String clientData(@PathVariable("id") int id, Model model) {
         System.out.println("client data method: ");
         model.addAttribute("client", this.clientService.getClientId(id));
-        return "clientdata";
+        return "dataClient";
     }
 
 

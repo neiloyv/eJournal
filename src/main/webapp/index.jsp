@@ -16,5 +16,7 @@
     <br/>
     <a href="<c:url value="/clients"/>">Список клиентов</a>
     <br/>
+    <a href="<c:url value="/groups"/>">Группы</a>
+    <br/>
 </body>
 </html>

@@ -28,7 +28,7 @@ public class Client {
     @Column(name = "CLIENTS_PHONE")
     private String phone;
 
-    @Column(name = "CLIENTS_CLASS")
+    @Column(name = "CLIENTS_GROUP")
     private String group;
 
     @Transient

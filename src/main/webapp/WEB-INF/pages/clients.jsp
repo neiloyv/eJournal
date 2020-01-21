@@ -76,7 +76,7 @@
 
         <h2>Добавить нового клиента</h2>
 
-        <c:url var="addAction" value="/clients/add"/>
+        <c:url var="addAction" value="/clients/addClient"/>
 
         <form:form action="${addAction}" commandName="client">
             <table>
@@ -203,15 +203,15 @@
                     <tr>
                             <%--<td>${client.id}</td>--%>
                         <td>${client.pp}</td>
-                        <td><a href="/clientdata/${client.id}">${client.surname}</a></td>
+                        <td><a href="/dataClient/${client.id}">${client.surname}</a></td>
                         <td>${client.name}</td>
                         <td>${client.birthday}</td>
                         <td>${client.parent}</td>
                         <td>${client.phone}</td>
                         <td>${client.group}</td>
-                        <td><a href="<c:url value='/edit/${client.id}'/>"><button>Ред.</button></a></td>
-                        <td><a href="<c:url value='/remove/${client.id}'/>"><button>Удалить</button></a></td>
-                        <td><a href="<c:url value='/archive/${client.id}'/>"><button>Архив</button></a></td>
+                        <td><a href="<c:url value='/editClient/${client.id}'/>"><button>Ред.</button></a></td>
+                        <td><a href="<c:url value='/removeClient/${client.id}'/>"><button>Удалить</button></a></td>
+                        <td><a href="<c:url value='/archiveClient/${client.id}'/>"><button>Архив</button></a></td>
                     </tr>
                 </c:forEach>
             </table>
