@@ -130,6 +130,7 @@
                             <spring:message text="Родитель"/>
                         </form:label>
                     </td>
+
                     <td>
                         <form:input path="parent"/>
                     </td>
