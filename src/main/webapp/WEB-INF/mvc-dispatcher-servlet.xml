@@ -13,6 +13,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
     <!-- Database Information -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">

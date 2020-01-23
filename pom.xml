@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.neiloyv</groupId>
-  <artifactId>eJournal</artifactId>
+  <artifactId>WebJournal</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>eJournal</name>
+  <name>WebJournal</name>
   <!-- FIXME change it to the project's website -->
   <!--<url>http://www.example.com</url>-->
 
@@ -204,7 +204,7 @@
   </dependencies>
 
   <build>
-    <finalName>eJournal</finalName>
+    <finalName>WebJournal</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
