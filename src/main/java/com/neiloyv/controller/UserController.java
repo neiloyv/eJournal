@@ -48,7 +48,7 @@ public class UserController {
         userService.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
-        return "redirect:/welcome";
+        return "redirect:/main";
     }
 
     @RequestMapping(value = "/login",
@@ -58,19 +58,19 @@ public class UserController {
         if (errors != null) {
             model.addAttribute("error", "Имя пользователя или пароль неправильные");
         }
-
-        if (logout != null) {
-            model.addAttribute("message", "Логирование прошло успешно");
-        }
+//
+//        if (logout != null) {
+//            model.addAttribute("message", "Логирование прошло успешно");
+//        }
 
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome"},
+    @RequestMapping(value = {"/", "/main"},
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + "; charset=utf-8")
     public String welcome(Model model) {
-        return "welcome";
+        return "main";
     }
 
     @RequestMapping(value = "/admin",
