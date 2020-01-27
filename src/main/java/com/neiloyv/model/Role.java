@@ -11,10 +11,10 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "ROLES_TITLE")
+    @Column(name = "title")
     private String title;
 
-    @ManyToMany(mappedBy = "ROLES")
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
     public Role() {

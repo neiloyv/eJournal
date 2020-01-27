@@ -11,10 +11,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "USERS_USERNAME")
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "USERS_PASSWORD")
+    @Column(name = "password")
     private String password;
 
     @Transient
@@ -22,8 +22,8 @@ public class User {
 
     @ManyToMany
     @JoinTable(name = "user_roles",
-            joinColumns = @JoinColumn(name = "USER_ROLES_USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "USER_ROLES_ROLES_ID"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     public Long getId() {
