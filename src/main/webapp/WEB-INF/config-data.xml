@@ -12,7 +12,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/eJournalSecurity"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/WebJournal?characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
@@ -39,4 +39,58 @@
     <tx:annotation-driven/>
 
     <jpa:repositories base-package="com.neiloyv.dao"/>
+
+
+
+
+
+    <!-- Hibernate 4 SessionFactory Bean definition -->
+    <bean id="hibernate4AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.neiloyv.model.Client</value>
+                <value>com.neiloyv.model.Group</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+                </prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--ClientDao and ClientService beans-->
+    <bean id="clientDao" class="com.neiloyv.dao.ClientDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="clientService" class="com.neiloyv.service.ClientServiceImpl">
+        <property name="clientDao" ref="clientDao"/>
+    </bean>
+
+    <!--GroupDao and GroupService beans-->
+    <bean id="groupDao" class="com.neiloyv.dao.GroupDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="groupService" class="com.neiloyv.service.GroupServiceImpl">
+        <property name="groupDao" ref="groupDao"/>
+    </bean>
+
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
+        <!--<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>-->
+    <!--</bean>-->
+
+    <!--<mvc:default-servlet-handler/>-->
+    <!--<mvc:annotation-driven/>-->
+
+
+
+
 </beans>

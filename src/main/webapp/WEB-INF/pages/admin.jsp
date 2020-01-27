@@ -33,6 +33,14 @@
         </form>
         <h2>Страница администратора ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Выйти</a>
         </h2>
+
+        <h3>Островочек</h3>
+        <br/>
+        <a href="<c:url value="/clients"/>">Список клиентов</a>
+        <br/>
+        <a href="<c:url value="/groups"/>">Группы</a>
+        <br/>
+
     </c:if>
 </div>
 
